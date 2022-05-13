@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hi dad
+    <script src="https://github.com/craftyjs/Crafty/releases/download/0.9.0/crafty.js"></script>
+    <script>
+        Crafty.init(300,300);
+
+        Crafty.e('Floor, 2D, Canvas, Color')
+        .attr({x: 0, y: 250, w: 250, h: 10})
+        .color('green');
+
+        Crafty.e('2D, Canvas, Color, Twoway, Gravity')
+        .attr({x: 0, y: 0, w: 50, h: 50})
+        .color('#F00')
+        .twoway(200)
+        .gravity('Floor');
+    </script>
+</body>
+</html>
