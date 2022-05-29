@@ -6,6 +6,7 @@ Hi! We're Outersloth. We're making dig4china, which is a remake of dig2china by 
 ### Framework: CraftyJS
 
 
-_please add more stuff here xd_
+_please add more stuff here xd_ 
+
 _also, programmers, you should probably only worry about the stuff in the script tags (that's where the js lives)_
 
