@@ -7,25 +7,40 @@
 </head>
 <body style="margin-top: 0; margin-left: 0;">
     <!-- hi newrgournd 👍 mwe make game in craftyjs -->
-    hi dad
     <script src="https://github.com/craftyjs/Crafty/releases/download/0.9.0/crafty.js"></script>
     <script>
         Crafty.init(1280, 720);
 
-        let ground = Crafty.e('Floor, 2D, Canvas, Color')
-        .attr({x: 0, y: 360, w: 1280, h: 360})
-        .color('green');
-
-
-        let player = Crafty.e('2D, Canvas, Color')
-        .attr({x: 590, y: 325, w: 30, h: 30})
-        .color('#F00')
-
-        document.querySelector('canvas').addEventListener('click', e => {
-            Crafty.log("this is the dig test");
-            player.removeComponent('gravity');
-            player.y += 10;
+        Crafty.defineScene('start', function() {
+            Crafty.background('#000000');
+            let x = Crafty.e('2D, Canvas, Image, Color, Mouse')
+                .image('start.png')
+                .attr({ x:1280/2-240, y:120})
+                .bind('MouseUp', function(e) {
+                    Crafty.enterScene('game');
+                });
+                alert(x.y);
         });
+
+        Crafty.enterScene('start');
+        
+        Crafty.defineScene('game', function() {
+            Crafty.background('#fff');
+            let ground = Crafty.e('Floor, 2D, Canvas, Color')
+            .attr({x: 0, y: 360, w: 1280, h: 360})
+            .color('green');
+
+
+            let player = Crafty.e('2D, Canvas, Color')
+            .attr({x: 590, y: 325, w: 30, h: 30})
+            .color('#F00')
+
+            document.querySelector('canvas').addEventListener('click', e => {
+                Crafty.log("this is the dig test");
+                player.removeComponent('gravity');
+                player.y += 10;
+            });
+            });
     </script>
 </body>
 </html>
